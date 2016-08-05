@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 
-    <title>Google vs Mapbox</title>
+    <title>Heroku VS Amazon</title>
 
     <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Lato:400,700' type='text/css'>
     <link rel="stylesheet" href="lib/css/reset.css" type="text/css">
@@ -28,37 +28,33 @@
 
     <div class="content">
         <section id="googleMaps" class="toggleable">
-            <h2><strong>Google Maps</strong></h2>
+            <h2><strong>Heroku</strong></h2>
             <div class="section-content">
                 <h3>Pro's</h3>
                 <ul class="bullets">
-                    <li>Google Maps is the winner for 99% of use cases</li>
-                    <li>2500 map views for free, charged $0.50 USD per 1,000 additional requests up to 100,000 requests per API per day</li>
-                    <li>Accuracy— Google has access to huge data streams that no ordinary company can afford to access. E.G. ETA is a function of numerous variables like terrain information, average speed data, real time traffic data, weather etc.</li>
-                    <li>Associated Services; Google Maps API is keyed into services such as Places, Business, Streetview, Satellite Imagery, Autocomplete, Google Earth etc.</li>
-                    <li><a href="https://developers.google.com/maps/documentation/">Good Documentation</a></li>
-                    <li><a href="https://developers.google.com/maps/documentation/javascript/examples/">Large Selection of Examples</a></li>
-                    <li>Easily Configurable</li>
-                    <li><a href="https://developers.google.com/maps/documentation/javascript/examples/places-searchbox">Address Input through API</a></li>
+                    <li>Heroku offers PasS, i.e. Platform as a Service. PaaS gives you an environment where you just push code and some basic configuration and get a running applicatoin</li>
+                    <li>You can deploy your app by pushing your code into a git repo provided by Heroku</li>
+                    <li>No system maintenance required; all handled by Heroku</li>
+                    <li>You can easily install multiple horizontal app instances on Heroku</li>
+                    <li>Web interface is easy to use and well designed</li>
+                    <li>Easy to add other services through add-ons</li>
+                    <li>Heroku automatically load balances and routes visitors to all available dynos</li>
                 </ul>
                 <h3>Con's</h3>
                 <ul class="bullets">
-                    <li>Not very flexible with integrating external API’s ( D3.js or Angular, though it can be done, is a pain )</li>
-                    <li>The value of proprietary map data is approaching zero
-                        <br>
-                        <br>Nokia for example bought <a href="https://maps.here.com/?map=38.8251,-90.7289,10,normal">HERE</a> for $8 Billion, recently sold for $3 Billion, i.e. open-source map data is winning against proprietary data, giving the upper hand
-                        to open-source now & in the future.
-                        <br>
-                        <br> This calls into question their current pricing structure, along with how they proceed, as the true value of map data continues to fall.</li>
+                    <li>Heroku is free to use for the first dyno. The cost increases steeply as you increase dynos. When this because an actual conversation is when we reach the point that we're forced to think about ease vs money</li>
+                    <li>CLI client works well for the most part except it can't manage multiple Heroku accounts</li>
+                    <li>Can't save any files on Heroku explicitly; only achieved through pushing into the git repo</li>
+                    <li>No way to increase RAM, storage, or CPU performance.</li>
+                    <li>Additional storage must be hosted separately through a service like Amazon S3</li>
+                    <li>Application performance can only be improved by increasing the number of running dynos</li>
+                    <li>No other services (like Redis) can be run on dynos. Dynos are strictly for application processes. Databases, background workers, and other services usually cost extra through Heroku's add-ons or third-party services</li>
+                    <li>No way to install system software. Heroku does provide some commonly-used packages such as Imagemagic, but if we need anything else, it's hack time</li>
                 </ul>
-                <h3>Arguably Good or Bad</h3>
+                <!-- <h3>Arguably Good or Bad</h3>
                 <ul class="bullets">
-                    <li>"I'm currently going with Google Maps, though I'm not happy about the decision. Getting any kind of custom HTML for markers/tool tips is absolutely the worst part of my React codebase (and I use "React" loosely because of it). It's
-                        spaghetti callbacks sprinkled with anonymous
-                        < div/> traversal.
-                        <br>
-                        <br>It's very fast though, and has good city data." <strong>~ <a href="https://www.linkedin.com/in/sam-barrientos">Samuel Barrientos</a>, Full-Stack RoR Dev at <a href="http://www.fightmetric.com/">FightMetric LLC</a></strong></li>
-                </ul>
+                    <li></li>
+                </ul> -->
                 <!-- <h3>Test Slide</h3>
                 <ul class="bullets">
                     <li><a href="00_basics/index.html" target="_blank">Slides</a></li>
@@ -67,37 +63,40 @@
         </section>
     </div>
     <div class="content">
-        <section id="mapbox" class="toggleable">
-            <h2><strong>Mapbox</strong></h2>
-            <div class="section-content">
-                <h3>Pro's</h3>
-                <ul class="bullets">
-                    <li>Built using OSM
-                        <br><span>( hallmark is customization & malleability, maintained by ~2mil members )<span></li>
-              <li>API is Developers Choice</li>
-              <li>Tech Support</li>
-              <li>Easy-To-Use GUI ( Map Studio ) for making Custom Maps / Vectors / Data Visualizations / Injecting Custom SVG’s & Data into existing map styles</li>
-              <li>Uses WebGL tech, making the animations / loading very smooth</li>
-              <li>Visually stands-out and very appealing</li>
-            </ul>
-            <h3>Con's</h3>
-            <ul class="bullets">
-              <li>Will need very specialized design and data goals & needs to justify omitting Google Maps as a solution over Mapbox</li>
-              <li>Documentation is either exactly right or out of date; depends on which library you use. Mapbox GL has an extensive examples library with code and previews, bringing dev overhead down, but other services ( like the studio ) has limited documentation</li>
-              <li>Can be difficult to discern what needs to be configured in code and what needs to be done in the Map Stuio</li>
-              <li>Though OSM is a hallmark of Mapbox as a service, tensions may lead to a fractured relationship; future unclear. Read this excellent <a href="http://www.citylab.com/design/2015/06/who-owns-the-digital-map-of-the-world/396119/">City Lab</a> article for more details.</li>
-            </ul>
-            <h3>Arguably Good or Bad</h3>
-            <ul class="bullets">
-                <li> 50,000 views/month for $50 w/ 3 custom styles </li>
-                <li>Direct and arguably sole competitor of Google Maps due to it's configurable nature</li>
-            </ul>
-          </div>
-      </section>
-    </div>
+        <div class="content">
+            <section id="googleMaps" class="toggleable">
+                <h2><strong>Amazon AWS</strong></h2>
+                <div class="section-content">
+                    <h3>Pro's</h3>
+                    <ul class="bullets">
+                        <li>AWS offers IaaS, i.e. Infrastruction as a Service. IaaS gives you components you need in order to build things on top of it</li>
+                        <li>Larger apps are better suited for AWS in terms of cost</li>
+                        <li>You have control over the file system in AWS; justl like a dedicated server with root access</li>
+                        <li>Easy to upgrade hardware requirements according to our needs</li>
+                        <li>Can run services like Redis or delayed job easily on AWS</li>
+                        <li>You can install any system software like wkhtmltopdf or Imagemagic easily</li>
+                    </ul>
+                    <h3>Con's</h3>
+                    <ul class="bullets">
+                        <li>You have to deploy your application yourself, either through Chef recipes, Capistrano, or manually</li>
+                        <li>You have to administer the system yourself. EC2 has machine images of popular distros such as Ubuntu that are easily launched, but after that, it's up to us to keep it up to date and secure</li>
+                        <li>Scaling horizontally (i.e. launching multiple app instances) is not as easy as with Heroku. With Heroku, you move a slider on their web interface, but with AWS, you better get familiar with Chef if you intend to scale up / down
+                            frequently
+                        </li>
+                        <li>AWS is more expensive for the basic offering. There is a free tier that will give you one free micro instance for the first year (only available when you first sign up) but this is not as generous as Heroku's free, unlimited, single
+                            dyno apps. </li>
+                        <li>Not as easy as Heroku simply because it isn't managed.</li>
+                    </ul>
+                    <!-- <h3>Arguably Good or Bad</h3>
+                    <ul class="bullets">
+                        <li></li>
+                    </ul> -->
+                </div>
+            </section>
+        </div>
 
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/main.js"></script>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>
